@@ -1,0 +1,284 @@
+/* "Tamming" Box Model With Reset */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Universal Rulesets */
+html {
+  font-size: 18px;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
+h1,
+h4 {
+  font-weight: bold;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+/* Header Ruleset */
+header {
+  background-color: black;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding: .66rem 0 .66rem .5rem;
+}
+
+.logo img {
+  padding-right: 1rem;
+  height: 1.5rem;
+}
+
+/* Splash Ruleset */
+.splash {
+  background: url("../images/moto.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25rem;
+}
+
+.headline {
+  background-color: black;
+  position: relative;
+  top: 9rem;
+  display: flex;
+  flex-flow: column;
+  padding: 2rem 3rem;
+  width: 25rem;
+  color: white;
+}
+
+.headline h4 {
+  font-size: 1rem;
+}
+
+.headline h1 {
+  font-size: 2rem;
+}
+
+/* Navigation Ruleset */
+nav {
+  background-color: firebrick;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul li {
+  padding: 0.75rem 0;
+}
+
+.mobile-navigation {
+  display: none;
+}
+
+/* Dropdown Nav */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  display: block;
+  transition-duration: 0.5s;
+  background: firebrick;
+  position: relative;
+  transition-duration: 0.5s;
+}
+
+ul {
+  background: firebrick;
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+}
+
+li:hover {
+  cursor: pointer;
+  background: darkred;
+}
+
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  left: 0;
+  display: none;
+  margin-top: 0.5rem;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
+  padding: 0.75rem;
+  border-top: 1px solid black;
+}
+
+/* Product & Business info */
+.content {
+  background-color: white;
+}
+
+.products,
+.business-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+
+.product {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 4px solid black;
+  width: 30%;
+  color: white;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem;
+  height: 9rem;
+}
+
+.img-container img {
+  max-width: 8rem;
+}
+
+.product span {
+  width: 100%;
+  background-color: black;
+  padding : 0.5rem;
+  text-align: center;
+}
+
+.info {
+  width: 35%;
+}
+
+.title {
+  background-color: black;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+/* Footer Ruleset */
+footer {
+  margin-top: 4rem;
+  background-color: black;
+  height: 5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 1024px) {
+/* Tablet size screens */
+  .headline {
+    width: 20rem;
+  }
+
+  .headline h1 {
+    font-size: 1.5rem;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .mobile-navigation {
+    display: list-item;
+    text-align: center;
+  }
+
+  .product {
+    width: 47%;
+  }
+
+  .glasses {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  /* Phone size screens */
+  .splash {
+    height: 15rem;
+    overflow: hidden;
+  }
+
+  .headline {
+    position: relative;
+    top: 10.55rem;
+    width: 100%;
+    padding: 1rem 2rem;
+  }
+
+  .headline h4 {
+    font-size: 0.77rem;
+  }
+
+  .headline h1 {
+    font-size: 1rem;
+  }
+
+  .products,
+  .business-info {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product {
+    width: 90%;
+  }
+
+  .watch {
+    display: none;
+  }
+
+  .business-info {
+    flex-flow: column;
+    justify-content: flex-start;
+  }
+
+  .info {
+    width: 90%;
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  footer {
+    text-align: center;
+  }
+}
