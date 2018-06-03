@@ -74,7 +74,6 @@ header {
 /* Navigation Ruleset */
 nav {
   background-color: firebrick;
-  padding: 0.75rem 0;
   color: white;
 }
 
@@ -83,8 +82,63 @@ nav ul {
   justify-content: space-between;
 }
 
+ul li {
+  padding: 0.75rem 0;
+}
+
 .mobile-navigation {
   display: none;
+}
+
+/* Dropdown Nav */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+li {
+  display: block;
+  transition-duration: 0.5s;
+  background: firebrick;
+  position: relative;
+  transition-duration: 0.5s;
+}
+
+ul {
+  background: firebrick;
+  list-style: none;
+  margin: 0 auto;
+  width: 100%;
+}
+
+li:hover {
+  cursor: pointer;
+  background: darkred;
+}
+
+ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  left: 0;
+  display: none;
+  margin-top: 0.5rem;
+}
+
+ul li:hover > ul,
+ul li:focus-within > ul,
+ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+
+ul li ul li {
+  clear: both;
+  width: 100%;
+  padding: 0.75rem;
+  border-top: 1px solid black;
 }
 
 /* Product & Business info */
